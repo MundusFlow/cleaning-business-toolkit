@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Business Toolkit &mdash; Free Pricing Calculator</title>
+
+  <!-- TODO: add Google Analytics once a GA4 property exists for this site -->
+
+  <!-- Open Graph tags: control how this page looks when shared as a link
+       (Slack, iMessage, Facebook, LinkedIn, etc. all read these) -->
+  <meta property="og:title" content="Cleaning Business Toolkit">
+  <meta property="og:description" content="A free pricing calculator for cleaning businesses, plus the Cleaning Business Toolkit: pricing, client management, and a business dashboard in one bundle.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mundusflow.github.io/cleaning-business-toolkit/">
+  <meta property="og:image" content="https://mundusflow.github.io/cleaning-business-toolkit/images/screenshot-pricingcalc.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cleaning Business Toolkit">
+  <meta name="twitter:description" content="A free pricing calculator for cleaning businesses, plus the Cleaning Business Toolkit: pricing, client management, and a business dashboard in one bundle.">
+  <meta name="twitter:image" content="https://mundusflow.github.io/cleaning-business-toolkit/images/screenshot-pricingcalc.png">
+
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+  <div class="brandbar">
+    <div class="brandbar-inner">
+      <a href="https://mundusflow.github.io/"><img src="images/mundusflow-logo.png" alt="Mundusflow" class="brandbar-logo"></a>
+      <a href="#free-tracker" class="brandbar-free-btn">Try the Free Version &rarr;</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>&#129529; Know Exactly What Every Cleaning Job Makes You.</h1>
+      <p class="subtitle">Price jobs with confidence and see what each one actually pays&mdash;with a free pricing calculator and the Cleaning Business Toolkit.</p>
+      <nav class="quicknav">
+        <a href="https://mundusflow.github.io/auto-shop-cfo/">&#128295; Auto Shops</a>
+        <a href="https://mundusflow.github.io/electrician-business-cfo/">&#9889; Electricians</a>
+        <a href="https://mundusflow.github.io/plumbing-business-cfo/">&#128703; Plumbers</a>
+        <a href="https://mundusflow.github.io/freelance-tax-runway-estimator/">&#128188; Freelancers</a>
+        <a href="https://mundusflow.github.io/photographer-cfo/">&#128247; Photographers</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <div class="narrow">
+
+    <div class="card" id="pricing-calculator">
+      <h2>Pricing Calculator</h2>
+      <p>Price a cleaning job so it covers your costs, pays you, and hits your margin target.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="p_clearBtn">Clear and enter your own numbers</button>
+
+      <div class="overhead-grid">
+        <div>
+          <label for="p_bedrooms">Number of bedrooms</label>
+          <p class="field-hint">For your reference&mdash;doesn't change the price.</p>
+          <input type="number" id="p_bedrooms" value="3" placeholder="0">
+        </div>
+        <div>
+          <label for="p_bathrooms">Number of bathrooms</label>
+          <p class="field-hint">For your reference&mdash;doesn't change the price.</p>
+          <input type="number" id="p_bathrooms" value="2" placeholder="0">
+        </div>
+      </div>
+
+      <label for="p_hours">Estimated cleaning hours</label>
+      <input type="number" id="p_hours" value="4" placeholder="0">
+
+      <label for="p_rate">Hourly labor rate</label>
+      <div class="input-group">
+        <span class="input-prefix">$</span>
+        <input type="number" id="p_rate" value="30" placeholder="0">
+      </div>
+
+      <div class="overhead-grid">
+        <div>
+          <label for="p_supplies">Supplies cost</label>
+          <div class="input-group">
+            <span class="input-prefix">$</span>
+            <input type="number" id="p_supplies" value="20" placeholder="0">
+          </div>
+        </div>
+        <div>
+          <label for="p_travel">Travel cost</label>
+          <div class="input-group">
+            <span class="input-prefix">$</span>
+            <input type="number" id="p_travel" value="10" placeholder="0">
+          </div>
+        </div>
+      </div>
+
+      <label for="p_other">Other costs</label>
+      <div class="input-group">
+        <span class="input-prefix">$</span>
+        <input type="number" id="p_other" value="5" placeholder="0">
+      </div>
+
+      <label for="p_margin">Desired profit margin</label>
+      <div class="input-group input-group-suffix">
+        <input type="number" id="p_margin" value="25">
+        <span class="input-suffix">%</span>
+      </div>
+
+      <label for="p_type">Cleaning type</label>
+      <select id="p_type">
+        <option value="0">Regular cleaning</option>
+        <option value="25" selected>Deep cleaning</option>
+        <option value="40">Move-in / Move-out</option>
+      </select>
+
+      <button id="pricingBtn">Calculate Price</button>
+
+      <div id="pricingResult" class="result"></div>
+
+      <p class="section-divider">About This Pricing Calculator</p>
+      <div class="calc-explainer">
+        <p>A flat per-bedroom rate treats a tidy 3-bedroom condo the same as a cluttered one that takes twice as long&mdash;this calculator prices the job on the hours it will actually take, plus your real costs, so the number in front of the client already covers your time.</p>
+        <p>Cleaning type carries its own markup on top of your base cost: regular cleanings add nothing, deep cleans add 25%, and move-in/move-out jobs add 40%. Those jobs take longer, use more supplies, and are harder on you&mdash;pricing them the same as a regular clean is the fastest way to resent your own bookings.</p>
+        <p>Bedrooms and bathrooms are captured here for your own reference and quote notes, not because they drive the price&mdash;two homes with the same room count can take very different amounts of time to clean, and estimated hours is the more honest input.</p>
+        <p>If a recommended price feels too high next to what competitors charge, that's usually a sign your margin target or hourly rate needs a second look, not that the math is wrong.</p>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="card lead-magnet narrow" id="free-tracker">
+      <h2>&#128203; Get the Free Job Tracker</h2>
+      <p>A single spreadsheet to log every cleaning job&mdash;supplies, travel, and profit per job, with a running snapshot. No email required, just a straight download.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your spreadsheet app &mdash; nothing is sent or stored anywhere.</p>
+      <a href="downloads/Cleaning Job Tracker (Free).xlsx" class="cta-button" download>Download the Free Tracker &rarr;</a>
+    </div>
+
+    <div class="cta narrow" id="cta">
+      <p class="cta-eyebrow">&#129529; CLEANING BUSINESS TOOLKIT</p>
+      <h2>Price jobs with confidence, manage clients, and see your real numbers&mdash;all in one toolkit.</h2>
+      <p>The free calculator above answers one question. The full toolkit brings pricing, client management, and a business dashboard together in three connected tools.</p>
+
+      <div class="product-screenshots">
+        <img src="images/screenshot-pricingcalc.png" alt="Cleaning Business Toolkit Pricing Calculator showing recommended price and estimated profit for a job" class="product-screenshot">
+        <img src="images/screenshot-incomedashboard.png" alt="Cleaning Business Toolkit Income Tracker dashboard showing revenue, expenses, and profit by month" class="product-screenshot">
+        <img src="images/screenshot-jobdashboard.png" alt="Cleaning Business Toolkit Job and Customer dashboard showing active clients and upcoming jobs" class="product-screenshot">
+      </div>
+
+      <p class="product-track-label">Includes:</p>
+      <ul class="product-checklist">
+        <li>Pricing calculator</li>
+        <li>Income &amp; expense tracker</li>
+        <li>Client manager</li>
+        <li>Job &amp; schedule tracker</li>
+        <li>Business dashboard</li>
+        <li>Quick start guide</li>
+      </ul>
+
+      <div class="product-badges">
+        <span class="product-badge">Excel + Google Sheets</span>
+        <span class="product-badge">3 tools, 1 bundle</span>
+      </div>
+
+      <a href="https://www.etsy.com/listing/4559642848/cleaning-business-planner-bundle" id="ctaButton" class="cta-button" target="_blank" rel="noopener">Get The Cleaning Business Toolkit &rarr;</a>
+    </div>
+
+    <div class="faq narrow">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What's included in the bundle?</h3>
+        <p>Three connected Excel files&mdash;an Income &amp; Expense Tracker, a Client &amp; Job Manager, and a Pricing Calculator with its own dashboard&mdash;plus a Quick Start Guide PDF and a short README to get you oriented.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I buy the tools separately instead of the bundle?</h3>
+        <p>Yes&mdash;each tool is also sold on its own in the MundusFlow Etsy shop. The bundle is priced lower than buying all three individually.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does this work in Google Sheets?</h3>
+        <p>Yes. These are standard .xlsx files that open and work fully in Excel, Google Sheets, and most other spreadsheet apps.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my data safe?</h3>
+        <p>Yes &mdash; the calculator above runs entirely in your browser. Nothing you type here is sent anywhere or stored.</p>
+      </div>
+    </div>
+
+    <div class="more-tools narrow">
+      <p class="more-tools-title">More Free Tools</p>
+      <p class="more-tools-subtitle">Free calculators for other trades from Mundusflow.</p>
+      <div class="more-tools-links">
+        <a href="https://mundusflow.github.io/auto-shop-cfo/">&#128295; Auto Shop CFO</a>
+        <a href="https://mundusflow.github.io/electrician-business-cfo/">&#9889; Electrician Business CFO</a>
+        <a href="https://mundusflow.github.io/plumbing-business-cfo/">&#128703; Plumbing Business CFO</a>
+        <a href="https://mundusflow.github.io/freelance-tax-runway-estimator/">&#128188; Freelance CFO</a>
+        <a href="https://mundusflow.github.io/photographer-cfo/">&#128247; Photographer CFO</a>
+        <a href="https://mundusflow.github.io/">&#129520; All Free Calculators</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="stickyBar" class="sticky-bar">
+    <div class="sticky-bar-inner">
+      <div class="sticky-bar-text">
+        <span class="sticky-bar-title">&#129529; Cleaning Business Toolkit</span>
+        <span class="sticky-bar-subtitle">Pricing, client management &amp; a business dashboard</span>
+      </div>
+      <a href="https://www.etsy.com/listing/4559642848/cleaning-business-planner-bundle" class="sticky-bar-button" target="_blank" rel="noopener">
+        <span class="sticky-bar-button-text">Get Instant Access</span>
+        <span class="sticky-bar-button-price">$21.99 one-time</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span id="lightboxClose" class="lightbox-close">&times;</span>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
